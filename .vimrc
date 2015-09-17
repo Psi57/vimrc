@@ -53,7 +53,7 @@ colorscheme solarized
 "let g:molokai_original = 1
 
 " set the colorcolumn
-"let g:solarized_visibility="low"
+let g:solarized_visibility="low"
 let g:solarized_termcolors=256
 "let g:solarized_termtrans =   1
 "let g:solarized_degrade   =   1
