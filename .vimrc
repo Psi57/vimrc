@@ -27,7 +27,7 @@ Plugin 'Valloric/ListToggle'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
-Plugin 'Yggdroot/indentLine'
+Plugin 'dyng/ctrlsf.vim'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -53,7 +53,7 @@ colorscheme solarized
 "let g:molokai_original = 1
 
 " set the colorcolumn
-let g:solarized_visibility="low"
+"let g:solarized_visibility="low"
 let g:solarized_termcolors=256
 "let g:solarized_termtrans =   1
 "let g:solarized_degrade   =   1
@@ -69,13 +69,16 @@ set hlsearch
 "-----------------------------缩进
 "set noexpandtab / expandtab
 set autoindent
-let g:indentLine_char = '¦'
 set ts=4 sw=4
-set expandtab
 set smartindent " 智能对齐方式
 "set smarttab " 智能tab
-":set list lcs=tab:- 
 "-------------------------------------YouCompleteMe
+" YCM 补全菜单配色
+" 菜单
+highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+" 选中项
+highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
@@ -141,13 +144,18 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_lua_checkers = ['luac']
+
+let g:syntastic_error_symbol = '>'
+let g:syntastic_warning_symbol = '△'
 "----------------------------------------------autoopen in begining
 "autocmd vimenter * NERDTreeToggle
 
 set guioptions-=T               "隐藏工具栏
 set guioptions-=m               " 隐藏菜单栏
 set guioptions-=b               "隐藏底部滚动栏
+set guioptions-=l
 set guioptions-=L               "~~~~左边~~~
+set guioptions-=R
 set guioptions-=r               "~~~~右边~~~
 "-----------------------gundo
 nnoremap <F10> :GundoToggle<CR>
