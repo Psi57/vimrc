@@ -11,6 +11,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -24,6 +26,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/ListToggle'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -41,6 +44,23 @@ syntax on
 "colorscheme flatlandia
 colorscheme solarized
 "colorscheme atom-dark
+"colorscheme molokai
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
+
+"let g:rehash256 = 1
+"let g:molokai_original = 1
+
+" set the colorcolumn
+let g:solarized_visibility="low"
+let g:solarized_termcolors=256
+"let g:solarized_termtrans =   1
+"let g:solarized_degrade   =   1
+"let g:solarized_bold      =   0
+"let g:solarized_underline =   0
+"let g:solarized_italic    =   0
+"let g:solarized_hitrail   =   1
+"let g:solarized_menu      =   0
 set background=dark
 set cursorline
 set cursorcolumn
@@ -51,10 +71,12 @@ set autoindent
 set ts=4 sw=4
 set smartindent " 智能对齐方式
 "set smarttab " 智能tab
+:set list lcs=tab:\|\ 
 "-------------------------------------YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_always_populate_location_list = 1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_key_list_select_completion = ['<Down>','<CR>']
 let g:ycm_key_list_previous_completion=['<Up>']
@@ -102,13 +124,28 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories = ["Ultisnips","bundle/vim-snippets/UltiSnips"]
+"----------------------------------------------ListToggle
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+"-----------------------syntax
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_lua_checkers = ['luac']
 "----------------------------------------------autoopen in begining
 "autocmd vimenter * NERDTreeToggle
 
 set guioptions-=T               "隐藏工具栏
 set guioptions-=m               " 隐藏菜单栏
-
-
+set guioptions-=b               "隐藏底部滚动栏
+set guioptions-=L               "~~~~左边~~~
+set guioptions-=r               "~~~~右边~~~
 "-----------------------gundo
 nnoremap <F10> :GundoToggle<CR>
 "--------------------------etc 杂项
