@@ -27,6 +27,7 @@ Plugin 'Valloric/ListToggle'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -68,10 +69,12 @@ set hlsearch
 "-----------------------------缩进
 "set noexpandtab / expandtab
 set autoindent
+let g:indentLine_char = '¦'
 set ts=4 sw=4
+set expandtab
 set smartindent " 智能对齐方式
 "set smarttab " 智能tab
-:set list lcs=tab:\|\ 
+":set list lcs=tab:- 
 "-------------------------------------YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "Do not ask when starting vim
