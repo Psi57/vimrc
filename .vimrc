@@ -28,6 +28,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -69,9 +70,12 @@ set hlsearch
 "-----------------------------缩进
 "set noexpandtab / expandtab
 set autoindent
+set expandtab
 set ts=4 sw=4
 set smartindent " 智能对齐方式
 "set smarttab " 智能tab
+"-----------indentline
+let g:indentLine_char = '¦'
 "-------------------------------------YouCompleteMe
 " YCM 补全菜单配色
 " 菜单
