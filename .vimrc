@@ -16,7 +16,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'fcitx.vim'
 Plugin 'asins/vimcdoc'
 Plugin 'bling/vim-airline'
@@ -28,7 +29,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'Yggdroot/indentLine'
+
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -54,8 +55,11 @@ colorscheme solarized
 "let g:molokai_original = 1
 
 " set the colorcolumn
-let g:solarized_visibility="low"
+"let g:solarized_visibility="low"
+let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
 "let g:solarized_termtrans =   1
 "let g:solarized_degrade   =   1
 "let g:solarized_bold      =   0
@@ -73,9 +77,10 @@ set autoindent
 set expandtab
 set ts=4 sw=4
 set smartindent " 智能对齐方式
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "显示多余空白  from spf13
+
 "set smarttab " 智能tab
-"-----------indentline
-let g:indentLine_char = '¦'
 "-------------------------------------YouCompleteMe
 " YCM 补全菜单配色
 " 菜单
@@ -112,6 +117,10 @@ let NERDTreeQuickOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
 autocmd vimenter * NERDTreeToggle "auto start
+"----------------------------------------------vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
 "--------------------------------CtrlSpace
 set nocompatible
 set hidden
@@ -151,6 +160,9 @@ let g:syntastic_lua_checkers = ['luac']
 
 let g:syntastic_error_symbol = '>'
 let g:syntastic_warning_symbol = '△'
+
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 "----------------------------------------------autoopen in begining
 "autocmd vimenter * NERDTreeToggle
 
@@ -162,7 +174,15 @@ set guioptions-=L               "~~~~左边~~~
 set guioptions-=R
 set guioptions-=r               "~~~~右边~~~
 "-----------------------gundo
-nnoremap <F10> :GundoToggle<CR>
+"nnoremap <F10> :GundoToggle<CR>
+"Gundo is deleted from this file...........................-------------------------------
+
+"undotree
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
+nnoremap <F10> :UndotreeToggle<cr>
 "--------------------------etc 杂项
 "对齐线
 set cc=100
