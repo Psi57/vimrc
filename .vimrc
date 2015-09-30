@@ -11,8 +11,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'morhetz/gruvbox'
+"Plugin 'tomasr/molokai'
+"Plugin 'morhetz/gruvbox'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -29,7 +29,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'dyng/ctrlsf.vim'
-
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -76,11 +75,12 @@ set hlsearch
 set autoindent
 set expandtab
 set ts=4 sw=4
+set softtabstop=4
+set shiftwidth=4
 set smartindent " 智能对齐方式
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "显示多余空白  from spf13
-
-"set smarttab " 智能tab
+set smarttab " 智能tab
 "-------------------------------------YouCompleteMe
 " YCM 补全菜单配色
 " 菜单
@@ -116,7 +116,7 @@ let NERDTreeKeepTreeInNewTab=1
 let NERDTreeQuickOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-autocmd vimenter * NERDTreeToggle "auto start
+"autocmd vimenter * NERDTreeToggle "auto start
 "----------------------------------------------vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
@@ -132,9 +132,8 @@ nmap <F8> :TagbarToggle<CR>
 let Tlist_Exit_OnlyWindow = 1 "exit when it is only 1 window
 "let g:tagbar_left = 1 "left
 "--------fold setting
-set foldenable                        " 允许折叠
 set foldmethod=syntax               " 折叠方式
-set foldlevel=999999999                       " 引发折叠的层次
+set nofoldenable
 set foldcolumn=1                      " 折叠为1 行
 "-----------------------------------------------UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -183,6 +182,9 @@ if has("persistent_undo")
     set undofile
 endif
 nnoremap <F10> :UndotreeToggle<cr>
+"---------------------------------------------------air line
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 "--------------------------etc 杂项
 "对齐线
 set cc=100
@@ -194,4 +196,11 @@ set wrapscan                          " 循环搜索
 set hlsearch                          " 高亮搜索
 set encoding=utf-8 " vim内部使用的编码方式
 set showmatch " 显示括号匹配
-
+"set nocompatible
+let mapleader = ','
+"--------------MAP
+" Window navigation
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-H> <C-W>h<C-W>_
+map <C-L> <C-W>l<C-W>_
