@@ -10,9 +10,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 "Plugin 'tomasr/molokai'
-"Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -43,29 +43,17 @@ syntax on
 "else
 "        colorscheme flatlandia
 "endif
+colorscheme gruvbox
 "colorscheme flatlandia
-colorscheme solarized
+"colorscheme solarize
 "colorscheme atom-dark
 "colorscheme molokai
-"let g:gruvbox_italic=1
-"colorscheme gruvbox
+"colorscheme Dracula
 
-"let g:rehash256 = 1
-"let g:molokai_original = 1
-
-" set the colorcolumn
-"let g:solarized_visibility="low"
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
-"let g:solarized_termtrans =   1
-"let g:solarized_degrade   =   1
-"let g:solarized_bold      =   0
-"let g:solarized_underline =   0
-"let g:solarized_italic    =   0
-"let g:solarized_hitrail   =   1
-"let g:solarized_menu      =   0
+"let g:solarized_termcolors=256
+"let g:solarized_visibility="normal"
+let t_Co = 256
+let g:gruvbox_bold = 0
 set background=dark
 set cursorline
 set cursorcolumn
@@ -73,10 +61,10 @@ set hlsearch
 "-----------------------------缩进
 "set noexpandtab / expandtab
 set autoindent
-set expandtab
+"set expandtab
 set ts=4 sw=4
-set softtabstop=4
-set shiftwidth=4
+"set softtabstop=4
+"set shiftwidth=4
 set smartindent " 智能对齐方式
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "显示多余空白  from spf13
@@ -84,9 +72,9 @@ set smarttab " 智能tab
 "-------------------------------------YouCompleteMe
 " YCM 补全菜单配色
 " 菜单
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
 " 选中项
-highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+"highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "Do not ask when starting vim
@@ -184,7 +172,7 @@ endif
 nnoremap <F10> :UndotreeToggle<cr>
 "---------------------------------------------------air line
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
+let g:airline_theme='gruvbox'
 "--------------------------etc 杂项
 "对齐线
 set cc=100
