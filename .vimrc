@@ -8,9 +8,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'jeaye/color_coded'
 "Plugin 'tomasr/molokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'terryma/vim-multiple-cursors'
@@ -29,6 +30,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'dyng/ctrlsf.vim'
+"Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/vimshell.vim'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -52,8 +55,14 @@ colorscheme gruvbox
 
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="normal"
-let t_Co = 256
+
 let g:gruvbox_bold = 0
+let g:gruvbox_termcolors = 256
+let g:gruvbox_hls_cursor = 'orange'
+let g:gruvbox_invert_tabline = 1
+"let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
+
 set background=dark
 set cursorline
 set cursorcolumn
@@ -81,7 +90,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_always_populate_location_list = 1
 let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_key_list_select_completion = ['<Down>','<CR>']
+let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<Up>']
 "在注释输入中也能补全
 let g:ycm_complete_in_comments = 1
