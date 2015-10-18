@@ -30,8 +30,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'dyng/ctrlsf.vim'
-"Plugin 'Shougo/vimproc.vim'
-"Plugin 'Shougo/vimshell.vim'
 call vundle#end()            " required
 filetype plugin indent on
 
