@@ -8,7 +8,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'jeaye/color_coded'
@@ -169,7 +169,7 @@ set guioptions-=R
 set guioptions-=r               "~~~~右边~~~
 "-----------------------gundo
 "nnoremap <F10> :GundoToggle<CR>
-"Gundo is deleted from this file...........................-------------------------------
+"Gundo was deleted...........................-------------------------------
 
 "undotree
 if has("persistent_undo")
@@ -178,7 +178,8 @@ if has("persistent_undo")
 endif
 nnoremap <F10> :UndotreeToggle<cr>
 "---------------------------------------------------air line
-let g:airline_powerline_fonts=1
+"let g:airline_powerline_fonts=1
+set laststatus=2
 let g:airline_theme='gruvbox'
 "--------------------------etc 杂项
 "对齐线
